@@ -1,3 +1,6 @@
-<p>
-  sub-menu works!
-</p>
+<ng-template ngFor let-child let-i="index" [ngForOf]="menu">
+  <app-sub-menu-item [child]="child"></app-sub-menu-item>
+  <ul>
+    <app-sub-menu *ngIf="child.children" [menu]="child.children"></app-sub-menu>
+  </ul>
+</ng-template>
